@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediksi Pendaftaran SMK</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style-monte2.css') }}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Beranda</a></li>
+            <li><a href="{{ url_for('tentang_saya') }}">Tentang Kami</a></li>
+            <li><a href="{{ url_for('bilangan_sebelumnya') }}">Data Sebelumnya</a></li>
+            <li><a href="{{ url_for('monte_carlo') }}">Monte Carlo</a></li>
+        </ul>
+    </nav>
+    <header class="hero">
+        <img src="{{ url_for('static', filename='perhitungan.jpeg') }}" alt="Gambar">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>Prediksi Jumlah Peserta Didik Baru</h1>
+            <p>Selamat datang di portal prediksi peserta didik baru SMK BPPI Baleendah!</p>
+        </div>
+    </header>
+
+    <main>
+        <!-- Tabel 1: Hitung Interval -->
+        <section>
+    <h2>Hitung Interval</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Tahun</th>
+                <th>Jumlah Pendaftar</th>
+                <th>Probabilitas</th>
+                <th>Kumulatif</th>
+                <th>Interval</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in interval_data %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ data.tahun }}</td>
+                <td>{{ data.jumlah_pendaftar }}</td>
+                <td>{{ data.probabilitas }}</td>
+                <td>{{ data.kumulatif }}</td>
+                <td>{{ data.interval }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+
+
+        <!-- Tabel 2: Generate Bilangan Acak -->
+        <section>
+    <h2>Generate Bilangan Acak</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Zi</th>
+                <th>(a * Zi) + C</th>
+                <th>((a * Zi) + C) mod m</th>
+                <th>Angka Tiga Digit</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in lcg_data %}
+            <tr>
+                <td>{{ data.zi }}</td>
+                <td>{{ data.a_zi_c }}</td>
+                <td>{{ data.mod_result }}</td>
+                <td>{{ data.three_digit }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+
+
+        <!-- Tabel 3: Hasil Prediksi -->
+        <section>
+    <h2>Hasil Prediksi</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Tahun</th>
+                <th>Jumlah Pendaftar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in hasil_prediksi %}
+            <tr>
+                <td>{{ data.tahun }}</td>
+                <td>{{ data.jumlah_calon_peserta }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+<section class="section">
+    <h2>Tutorial Website</h2>
+     <video controls>
+        <source src="{{ url_for('static', filename='tutorial.mp4') }}" type="video/mp4">
+        <source src="{{ url_for('static', filename='tutorial.webm') }}" type="video/webm">
+    </video>
+</section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 SMK BPPI Baleendah. Semua Hak Dilindungi.</p>
+    </footer>
+</body>
+</html>

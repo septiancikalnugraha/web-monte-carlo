@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Sebelumnya - Prediksi Pendaftaran SMK</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style-data-sebelumnya.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Beranda</a></li>
+            <li><a href="{{ url_for('tentang_saya') }}">Tentang Kami</a></li>
+            <li><a href="{{ url_for('bilangan_sebelumnya') }}">Data Sebelumnya</a></li>
+            <li><a href="{{ url_for('monte_carlo') }}">Monte Carlo</a></li>
+        </ul>
+    </nav>
+    <header class="hero">
+        <img src="{{ url_for('static', filename='perhitungan.jpeg') }}" alt="Gambar">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>Data Pendaftar Sebelumnya</h1>
+            <p>Berikut adalah data pendaftar dari tahun-tahun sebelumnya.</p>
+        </div>
+    </header>
+
+   <main>
+        <section>
+            <h2>Data Sebelumnya</h2>
+            <div id="loading-message" style="display: none;">Loading data...</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tahun</th>
+                        <th>Jumlah Pendaftar</th>
+                    </tr>
+                </thead>
+                <tbody id="data-tbody">
+                    {% for row in data_sebelumnya %}
+                    <tr>
+                        <td>{{ row.tahun }}</td>
+                        <td>{{ row.jumlah }}</td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="2">Tidak ada data tersedia.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 SMK BPPI Baleendah. Semua Hak Dilindungi.</p>
+    </footer>
+</body>
+</html>
