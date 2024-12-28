@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata Guru Produktif</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+     <link rel="stylesheet" href="{{ url_for('static', filename='style-tentang-saya.css') }}">
+   
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Beranda</a></li>
+            <li><a href="{{ url_for('tentang_saya') }}">Tentang Kami</a></li>
+          <li><a href="{{ url_for('bilangan_sebelumnya') }}">Data Sebelumnya</a></li>
+           <li><a href="{{ url_for('monte_carlo') }}">Monte Carlo</a></li>
+
+        </ul>
+    </nav>
+    <header class="hero">
+        <img src="https://via.placeholder.com/1200x400" alt="Foto sekolah">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1> Guru Dan Staf</h1>
+            <p>Kenali lebih dekat para guru Dan Staf SMK BPPI Baleendah!</p>
+        </div>
+    </header>
+    <main>
+        <section class="biodata-guru">
+            <div class="biodata">
+                 <img src="{{ url_for('static', filename='guru2.jpeg') }}" alt="Gambar">
+                <h2>Guruh Panji Alam, S.kom. </h2>
+                <p>"To teach is to learn twice." - Joseph Joubert (Mengajar adalah belajar dua kali.)</p>
+            </div>
+            <div class="biodata">
+                <img src="{{ url_for('static', filename='guru1.jpeg') }}" alt="Gambar">
+                <h2>Asep Dimyati Yusuf, S.T. </h2>
+                <p>"Dalam belajar kamu akan mengajar, dan dalam mengajar kamu akan belajar." - Phil Collins</p>
+            </div>
+            <div class="biodata">
+                 <img src="{{ url_for('static', filename='kepsek.jpeg') }}" alt="Gambar">
+                <h2>Anton Jaenudin, S.Pd. </h2>
+                <p>Maju Bersama Hebat Semua</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 SMK BPPI Baleendah. Semua Hak Dilindungi.</p>
+    </footer>
+</body>
+</html>
