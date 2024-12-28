@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediksi Pendaftaran SMK</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style-index.css') }}">
+   
+   
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Beranda</a></li>
+            <li><a href="{{ url_for('tentang_saya') }}">Tentang Kami</a></li>
+            <li><a href="{{ url_for('bilangan_sebelumnya') }}">Data Sebelumnya</a></li>
+            <li><a href="{{ url_for('monte_carlo') }}">Monte Carlo</a></li>
+        </ul>
+    </nav>
+    <header class="hero">
+        <img src="{{ url_for('static', filename='bppi1.jpeg') }}" alt="Gambar">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>Prediksi Jumlah Peserta Didik Baru</h1>
+            <p>Selamat datang di portal prediksi peserta didik baru SMK BPPI Baleendah!</p>
+        </div>
+    </header>
+    <main>
+        <section class="section">
+            <h2>Tentang SMK BPPI Baleendah</h2>
+            <p>SMK BPPI Baleendah adalah salah satu sekolah menengah kejuruan terbaik di Kabupaten Bandung. 
+            Kami menawarkan program pendidikan berkualitas tinggi yang berfokus pada pengembangan keterampilan 
+            siswa untuk mempersiapkan mereka menghadapi dunia kerja.</p>
+            <video controls>
+                <source src="{{ url_for('static', filename='profil.mp4') }}" type="video/mp4">
+                <source src="{{ url_for('static', filename='profil.webm') }}" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+            <p>Program unggulan kami meliputi:</p>
+            <ul>
+                <li>Teknik Komputer dan Jaringan</li>
+                <li>Akuntansi dan Keuangan Lembaga</li>
+                <li>Axioo Class Programing</li>
+                <li>Rekayasa Perangkat Lunak</li>
+            </ul>
+            <p>Dengan fasilitas modern dan tenaga pengajar profesional, kami berkomitmen untuk memberikan 
+            pengalaman belajar terbaik bagi setiap siswa.</p>
+        </section>
+         <section class="section">
+            <h2>Fasilitas Sekolah</h2>
+            <p>SMK BPPI Baleendah memiliki fasilitas lengkap untuk menunjang kegiatan belajar mengajar, termasuk:</p>
+            <ul>
+                <li>Laboratorium Komputer dengan perangkat terbaru.</li>
+                <li>Ruang Praktik Siswa (RPS) untuk setiap jurusan.</li>
+                <li>Perpustakaan dengan koleksi buku dan referensi yang lengkap.</li>
+                <li>Lapangan olahraga multifungsi.</li>
+            </ul>
+        </section>
+        <section class="section">
+            <h2><center>VISI & MISI</h2>
+            <h3>VISI</h3>
+            <p>Menjadi lembaga pendidikan kejuruan yang unggul dalam menghasilkan lulusan yang kompeten, berdaya saing tinggi, dan berakhlak mulia.</p>
+            <h3>MISI</h3>
+            <ul>
+                <li>Menyelenggarakan pendidikan berbasis kompetensi sesuai kebutuhan dunia usaha dan dunia industri.</li>
+                <li>Mengembangkan kepribadian siswa yang berkarakter, disiplin, dan mandiri.</li>
+                <li>Meningkatkan kualitas tenaga pengajar dan fasilitas pendidikan yang relevan dengan perkembangan teknologi.</li>
+                <li>Membangun kerja sama dengan dunia usaha, dunia industri, dan institusi lain untuk menciptakan peluang kerja bagi lulusan.</li>
+                <li>Menanamkan nilai-nilai moral dan etika dalam kehidupan sehari-hari siswa.</li>
+            </ul>
+        </section>
+        <section class="section">
+            <h2>Galeri Kegiatan</h2>
+            <p>Berikut adalah beberapa dokumentasi kegiatan yang dilakukan di SMK BPPI Baleendah:</p>
+            <div>
+                <img src="{{ url_for('static', filename='kegiatan1.jpeg') }}" alt="Gedung SMK BPPI Baleendah">
+                <img src="{{ url_for('static', filename='kegiatan2.jpeg') }}" alt="Gedung SMK BPPI Baleendah">
+                <center><img src="{{ url_for('static', filename='kegiatan3.jpeg') }}" alt="Gedung SMK BPPI Baleendah">
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 SMK BPPI Baleendah. Semua Hak Dilindungi.</p>
+    </footer>
+</body>
+</html>
